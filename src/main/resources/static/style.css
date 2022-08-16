@@ -1,0 +1,124 @@
+body {
+    margin:auto;
+    max-width:1024px;
+    min-width:412px;
+    padding:10px;
+    background-color:#ebebeb;
+    font-size:14px;
+    font-family:Verdana;
+}
+
+ul {
+  list-style: none; /*убираем маркеры списка*/
+  margin: 0; /*убираем отступы*/
+  padding-left: 0; /*убираем отступы*/
+  background:#36caf7; /*добавляем фон всему меню*/
+  height: 50px; /*задаем высоту*/
+}
+.menu a {
+  text-decoration: none; /*убираем подчеркивание текста ссылок*/
+  background:#36caf7; /*добавляем фон к пункту меню*/
+  color:#fff; /*меняем цвет ссылок*/
+  padding:0px 15px; /*добавляем отступ*/
+  font-family: arial; /*меняем шрифт*/
+  line-height:50px; /*ровняем меню по вертикали*/
+  display: block;
+  border-right: 1px solid #33a2c4; /*добавляем бордюр справа*/
+  -moz-transition: all 0.3s 0.01s ease; /*делаем плавный переход*/
+  -o-transition: all 0.3s 0.01s ease;
+  -webkit-transition: all 0.3s 0.01s ease;
+}
+.menu a:hover {
+  background:#24a3ed;/*добавляем эффект при наведении*/
+}
+li {
+  float:left; /*Размещаем список горизонтально для реализации меню*/
+}
+
+.username_tag {
+  float: right; /*Размещаем список горизонтально для реализации меню*/
+  padding-right: 15px;
+  color:#fff; /*меняем цвет текста*/
+  line-height: 20px; /*ровняем меню по вертикали*/
+
+}
+.login_box a {
+    text-align: center;
+    display:block;
+}
+
+.login_box input {
+    width:100%;
+    margin-top: 10 px;
+    border-radius: 8px;
+    border: 1px solid #36caf7;
+    height: calc(1.5em + 1rem + 2px);
+}
+
+a.username_tag {
+  color:#fff; /*меняем цвет текста*/
+}
+
+
+@media(max-width: 600px) {
+    a.username_tag {
+        display: none;
+        }
+}
+
+.footer_text p {
+    margin-top:5 px; /*делаем отступ сверху*/
+    float:right;
+
+}
+p.error {
+    text-align: center;
+    font-size: 16px;
+}
+
+#menu {
+    margin-top: 5px;
+}
+
+.login_box {
+     width: 50%;
+     margin: 0 auto;
+}
+
+div.login_box {
+     margin-top: 40px;
+}
+
+.login_box a {
+     margin-top: 10px;
+     color: #0000EE;
+}
+
+div.container {
+     margin-top: 20px;
+}
+
+input.button_1 {
+    margin-top: 10px;
+    with: 50 %;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  padding: .8em 1em calc(.8em + 3px);
+  border-radius: 3px;
+  background: #36caf7;
+  box-shadow: #36caf7 inset;
+  transition: 0.2s;
+}
+input.button_1:hover {
+    background: #28b5e0;
+    box-shadow: #28b5e0;
+}
+
+input.button_1:active {
+  background: #29a1c6;
+  box-shadow: 0 3px #29a1c6 inset;
+}
+
+
+

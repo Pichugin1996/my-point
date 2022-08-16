@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Авторизация</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<div th:insert="header"></div>
+
+<div th:insert="menu"></div>
+
+<div class="container">
+    <div class="login_box">
+        <div th:if="${param.error}">
+            <p class="error">Ошибка в логине или пароле!</p>
+        </div>
+        <form th:action="@{/login}" method="post">
+            <div>
+                <p>Ваш логин:</p>
+                <input type="text" name="username" placeholder="Логин"/>
+            </div>
+
+            <div>
+                <p>Ваш пароль:</p>
+                <input type="password" name="password" placeholder="Пароль"/>
+            </div>
+
+            <input class="button_1" type="submit" value="Войти"/>
+
+            <a href="/registration">Зарегистрироваться</a>
+        </form>
+    </div>
+</div>
+
+<div th:insert="footer"></div>
+</body>
+</html>
