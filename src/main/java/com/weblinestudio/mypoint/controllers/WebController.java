@@ -18,7 +18,6 @@ public class WebController {
             log.debug("mainPage -- set username: {}", principal.getName());
             model.addAttribute("username", principal.getName());
         }
-
         return "/main";
     }
 }

@@ -17,7 +17,7 @@
 
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <fileNamePattern>logs/archived/app.%d{yyyy-MM-dd-HH-mm}.log</fileNamePattern>
-            <maxHistory>5</maxHistory>
+            <maxHistory>30</maxHistory>
             <totalSizeCap>10MB</totalSizeCap>
             <cleanHistoryOnStart>true</cleanHistoryOnStart>
         </rollingPolicy>
@@ -33,7 +33,7 @@
 
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <fileNamePattern>logs/archived/app-spring.%d{yyyy-MM-dd-HH-mm}.log</fileNamePattern>
-            <maxHistory>5</maxHistory>
+            <maxHistory>30</maxHistory>
             <totalSizeCap>10MB</totalSizeCap>
             <cleanHistoryOnStart>true</cleanHistoryOnStart>
         </rollingPolicy>
@@ -46,8 +46,10 @@
     <root level="INFO">
         <appender-ref ref="main"/>
     </root>
-
     <logger name="com.weblinestudio.mypoint.controllers" level="DEBUG" additivity="false">
+        <appender-ref ref="FILE"/>
+    </logger>
+    <logger name="com.weblinestudio.mypoint.service" level="DEBUG" additivity="false">
         <appender-ref ref="FILE"/>
     </logger>
     <logger name="org.springframework.web" level="DEBUG" additivity="false">

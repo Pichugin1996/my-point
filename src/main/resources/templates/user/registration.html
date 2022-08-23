@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+<div th:insert="header"></div>
+
+<div th:insert="menu"></div>
+
+<div class="container">
+    <div class="registr_box">
+        <form th:action="@{/registration}" method="post" th:object="${user}" sec:authorize="isAnonymous()">
+            <div>
+                <p>Придумайте логин:</p>
+                <input type="text" name="username" placeholder="Логин"/>
+                <p th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Текст с ошибкой</p>
+            </div>
+
+            <div>
+                <p>Придумайте пароль:</p>
+                <input type="password" name="password" placeholder="Пароль"/>
+                <p th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Текст с ошибкой</p>
+            </div>
+
+            <div>
+                <p>Повторите пароль:</p>
+                <input type="password" name="passwordConfirm" placeholder="Повторите пароль"/>
+            </div>
+
+            <div>
+                <p>Введите Email:</p>
+                <input type="email" name="email" placeholder="Пароль"/>
+            </div>
+
+            <div>
+                <p>Введите имя:</p>
+                <input type="text" name="firstName" placeholder="Имя"/>
+            </div>
+
+            <div>
+                <p>Введите фамилию:</p>
+                <input type="text" name="lastName" placeholder="Фамилия"/>
+            </div>
+
+            <div>
+                <p>Введите номер телефона:</p>
+                <input type="text" name="phone" placeholder="89999999999"/>
+                <p th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}">Текст с ошибкой</p>
+            </div>
+
+            <div>
+                <p><input class="checkbox" type="checkbox" name="checkboxDirector" value="true"> Зарегистрироваться как владелец бизнеса?</p>
+            </div>
+
+            <input class="button_1" type="submit" value="Зарегистрироваться"/>
+
+
+            <a href="/login">Войти</a>
+
+        </form>
+        <div sec:authorize="isAuthenticated()" style="text-align: center;">
+            <p>Вы уже Зарегистрированы!</p>
+        </div>
+    </div>
+</div>
+
+<div th:insert="footer"></div>
+</body>
+</html>
