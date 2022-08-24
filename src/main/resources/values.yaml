@@ -7,6 +7,9 @@ validator.message.errorUserLength: Логин должен содержать о
 validator.message.errorUserPattern: Логин может содержать только буквы латинского алфавита, цифры, нижнее подчеркивание и дефиз!
 
 validator.message.errorPhone: Номер телефона введен не корректно, не используйте пробелов или иные символы!
+validator.message.errorPhoneExist: Такой номер уже использует другой пользователь!
+
+validator.message.errorEmailExist: Данный Email уже используется другим пользователем!
 
 validator.pattern.password: ^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=\S+$).{8,}$
 validator.pattern.username: ^[a-zA-Z0-9_-]{5,20}$

@@ -33,6 +33,7 @@
             <div>
                 <p>Введите Email:</p>
                 <input type="email" name="email" placeholder="Пароль"/>
+                <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Текст с ошибкой</p>
             </div>
 
             <div>

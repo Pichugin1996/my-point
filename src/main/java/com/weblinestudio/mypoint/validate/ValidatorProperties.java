@@ -19,6 +19,10 @@ public class ValidatorProperties {
     private String validatorMessageErrorUserPattern;
 
     private String validatorMessageErrorPhone;
+    private String validatorMessageErrorPhoneExist;
+
+
+    private String validatorMessageErrorEmailExist;
 
     private String validatorPatternPassword;
     private String validatorPatternUsername;
@@ -54,5 +58,7 @@ public class ValidatorProperties {
         this.validatorPatternLoginMax = (int) map.get("validator.pattern.loginMax");
         this.validatorPatternPhone = (String) map.get("validator.pattern.phone");
         this.validatorMessageErrorPhone = (String) map.get("validator.message.errorPhone");
+        this.validatorMessageErrorPhoneExist = (String) map.get("validator.message.errorPhoneExist");
+        this.validatorMessageErrorEmailExist = (String) map.get("validator.message.errorEmailExist");
     }
 }

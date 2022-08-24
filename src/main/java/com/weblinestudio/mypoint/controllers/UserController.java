@@ -56,7 +56,7 @@ public class UserController {
                                        HttpServletRequest request) {
         log.debug("registrationPagePost");
         log.debug("registrationPagePost -- ModelAttribute 'user' : {}", user);
-        registerFormValidator.verify(user, model, bindingResult);
+        registerFormValidator.verify(user, bindingResult);
 
         if (bindingResult.hasErrors()) {
             return "user/registration";
