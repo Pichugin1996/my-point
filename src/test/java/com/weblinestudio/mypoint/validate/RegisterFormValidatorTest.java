@@ -334,6 +334,40 @@ class RegisterFormValidatorTest {
     }
 
     @Test
+    void badEmail1() {
+        userRequestDto = new UserRequestDto();
+        userRequestDto.setEmail("  ");
+
+        userRequestDto.setUsername("Testers_12-3");
+        userRequestDto.setPassword("Password123");
+        userRequestDto.setPasswordConfirm("Password123");
+        userRequestDto.setFirstName("Alex");
+        userRequestDto.setLastName("Flomasters");
+        userRequestDto.setPhone("89999999999");
+        userRequestDto.setCheckboxDirector(true);
+
+        registerFormValidator.verify(userRequestDto, bindingResult);
+        Assert.assertEquals(true, registerFormValidator.isError());
+    }
+
+    @Test
+    void badEmail2() {
+        userRequestDto = new UserRequestDto();
+        userRequestDto.setEmail("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+
+        userRequestDto.setUsername("Testers_12-3");
+        userRequestDto.setPassword("Password123");
+        userRequestDto.setPasswordConfirm("Password123");
+        userRequestDto.setFirstName("Alex");
+        userRequestDto.setLastName("Flomasters");
+        userRequestDto.setPhone("89999999999");
+        userRequestDto.setCheckboxDirector(true);
+
+        registerFormValidator.verify(userRequestDto, bindingResult);
+        Assert.assertEquals(true, registerFormValidator.isError());
+    }
+
+    @Test
     void checkUsernameExist() {
         userRequestDto = new UserRequestDto();
         userRequestDto.setUsername("UserNameTest");

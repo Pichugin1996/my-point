@@ -71,7 +71,10 @@ public class UserController {
     }
 
     @GetMapping("/account")
-    public String accountPage() {
+    public String accountPage(Model model, Principal principal) {
+        if (principal != null) {
+            model.addAttribute("username", principal.getName());
+        }
         return "user/account";
     }
 }

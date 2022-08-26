@@ -1,6 +1,5 @@
-package com.weblinestudio.mypoint.entity;
+package com.weblinestudio.mypoint.entity.user;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -11,7 +10,6 @@ import java.util.Set;
 @Entity
 @Table(name = "mp_users")
 @NoArgsConstructor
-@AllArgsConstructor
 @Data
 public class User {
     @Id
@@ -19,22 +17,22 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "email", unique = true, nullable = false)
+    @Column(name = "email", unique = true, nullable = false, length = 70)
     private String email;
 
-    @Column(name = "username", unique = true, nullable = false)
+    @Column(name = "username", unique = true, nullable = false, length = 70)
     private String username;
 
-    @Column(name = "password", nullable = false)
+    @Column(name = "password", nullable = false, length = 70)
     private String password;
 
-    @Column(name = "firstName")
+    @Column(name = "firstName", length = 70)
     private String firstName;
 
-    @Column(name = "lastName")
+    @Column(name = "lastName", length = 70)
     private String lastName;
 
-    @Column(name = "phone", unique = true, nullable = false)
+    @Column(name = "phone", unique = true, nullable = false, length = 15)
     private String phone;
 
     //TODO remake

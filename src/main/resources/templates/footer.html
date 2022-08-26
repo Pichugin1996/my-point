@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
 <body>
-
-<p class="footer_text">©2022 Web line studio.</p>
-<a th:href="@{/logout}" sec:authorize="isAuthenticated()">Выйти</a>
-<a th:href="@{/login}" sec:authorize="isAnonymous()">Войти</a>
+<div class="footer_box">
+    <p class="footer_text">©2022 Web line studio.</p>
+    <a th:href="@{/logout}" sec:authorize="isAuthenticated()">Выйти</a>
+    <a th:href="@{/login}" sec:authorize="isAnonymous()">Войти</a>
 </body>
+
+</div>
+
 </html>

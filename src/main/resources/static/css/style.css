@@ -8,7 +8,7 @@ body {
 	font-family: Verdana;
 }
 
-ul {
+.menu ul {
 	list-style: none;
 	/*убираем маркеры списка*/
 	margin: 0;
@@ -48,7 +48,7 @@ ul {
 	/*добавляем эффект при наведении*/
 }
 
-li {
+.menu li {
 	float: left;
 	/*Размещаем список горизонтально для реализации меню*/
 }
@@ -147,6 +147,13 @@ div.registr_box {
 
 div.container {
 	margin-top: 20px;
+    padding-top: 10px;
+    height: 100%;
+    min-height: 250px;
+}
+
+footer_box div {
+    display:block;
 }
 
 input.button_1 {
@@ -174,4 +181,149 @@ input.button_1:active {
 
 input.checkbox {
     all: revert;
+}
+
+.storage_menu {
+    display: flex;
+}
+
+.storage_menu ul {
+  list-style: none; /*убираем маркеры списка*/
+  margin: 0; /*убираем отступы*/
+  padding-left: 0; /*убираем отступы*/
+  margin-top:25px; /*делаем отступ сверху*/
+}
+.storage_menu a {
+  text-decoration: none; /*убираем подчеркивание текста ссылок*/
+  background:#30A8E6; /*добавляем фон к пункту меню*/
+  color:#fff; /*меняем цвет ссылок*/
+  padding:10px; /*добавляем отступ*/
+  font-family: arial; /*меняем шрифт*/
+  border-radius:4px; /*добавляем скругление*/
+  -moz-transition: all 0.3s 0.01s ease; /*делаем плавный переход*/
+  -o-transition: all 0.3s 0.01s ease;
+  -webkit-transition: all 0.3s 0.01s ease;
+}
+.storage_menu a:hover {
+  background:#1C85BB;/*добавляем эффект при наведении*/
+}
+.storage_menu li {
+  float:left; /*Размещаем список горизонтально для реализации меню*/
+  margin-right:5px; /*Добавляем отступ у пунктов меню*/
+  list-style-type: none;
+
+}
+
+.table-bordered {
+  border: 1px solid #ddd !important;
+}
+
+table caption {
+	padding: .5em 0;
+}
+
+@media screen and (max-width: 767px) {
+  table caption {
+    display: none;
+  }
+}
+
+.p {
+  text-align: center;
+  padding-top: 140px;
+  font-size: 14px;
+}
+
+.item_table {
+	width: 100%;
+	margin-bottom: 20px;
+
+	border-collapse: collapse;
+}
+
+.item_table th {
+	font-weight: bold;
+	padding: 5px;
+	background: #efefef;
+	border: 1px solid #dddddd;
+}
+
+.item_table td {
+	border: 1px solid #dddddd;
+	padding: 5px;
+	background: #fff;
+	text-align: right;
+}
+
+.item_table tr td:first-child, .table tr th:first-child {
+	border-left: none;
+}
+
+.table tr td:last-child, .table tr th:last-child {
+	border-right: none;
+}
+
+a.green{
+border-radius: 4px;
+-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.08);
+-moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.08);
+box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.08);
+color: #fff;
+display:block;
+width:100px;
+text-align: center;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 14px;
+padding: 8px 16px;
+margin: 20px auto;
+text-decoration: none;
+text-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
+-webkit-transition: background-color 0.1s linear;
+-moz-transition: background-color 0.1s linear;
+-o-transition: background-color 0.1s linear;
+transition: background-color 0.1s linear;
+display: inline;
+}
+a.green {
+background-color: rgb( 43, 153, 91 );
+border: 1px solid rgb( 33, 126, 74 );
+}
+
+a.green:hover {
+background-color: rgb( 75, 183, 141 );
+}
+
+.items_menu {
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+input.green{
+border-radius: 4px;
+-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.08);
+-moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.08);
+box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.08);
+color: #fff;
+display:block;
+width:100px;
+text-align: center;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 14px;
+padding: 8px 16px;
+margin: 20px auto;
+text-decoration: none;
+text-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
+-webkit-transition: background-color 0.1s linear;
+-moz-transition: background-color 0.1s linear;
+-o-transition: background-color 0.1s linear;
+transition: background-color 0.1s linear;
+display: inline;
+}
+input.green {
+background-color: rgb( 43, 153, 91 );
+border: 1px solid rgb( 33, 126, 74 );
+}
+
+input.green:hover {
+background-color: rgb( 75, 183, 141 );
 }

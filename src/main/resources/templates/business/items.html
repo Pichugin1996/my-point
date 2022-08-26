@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Склад</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+</head>
+<body>
+
+<div th:insert="header"></div>
+<div th:insert="menu"></div>
+<div th:insert="business/storage_menu"></div>
+
+<div class="container">
+    <div class="items_menu">
+        <a class="green" th:href="@{/storage/edit}">Создать новый товар</a>
+        <a class="green" th:href="@{/}">Создать категорию</a>
+    </div>
+
+    <div class="items_box">
+
+        <p th:if="${items.isEmpty()}">Пока у вас нет товаров!</p>
+
+        <div th:if="${!items.isEmpty()}" id="items_list">
+            <table class="item_table">
+                <thead>
+                <tr>
+                    <th>id</th>
+                    <th>Наименование</th>
+                    <th>Категория</th>
+                    <th>Цена</th>
+                    <th>Количество</th>
+                    <th>Объем</th>
+                    <th>Дата создания</th>
+                    <th>*</th>
+                    <th>*</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr id="item" th:each="item, state : ${items}">
+                    <td th:utext="${state.count}">id</td>
+                    <td th:utext="${item.getTitleName}" style="text-align: left;">titleName</td>
+                    <td th:utext="${item.getCategory}" style="text-align: left;">category</td>
+                    <td th:utext="${item.getPrice}">price</td>
+                    <td th:utext="${item.getAmount}">amount</td>
+                    <td th:utext="${item.getWeight}">weight</td>
+                    <td th:utext="${item.getCreationDate}">creationDate</td>
+                    <td>
+                        <form th:action="@{/storage/edit/{id}(id=${item.getId})}" method="get">
+                            <button type="submit">Редактировать</button>
+                        </form>
+                    </td>
+
+                    <td>
+                        <form th:action="@{/storage/delete/{id}(id=${item.getId})}" th:method="post">
+                            <button type="submit"
+                                    th:onclick="if(!(confirm('Вы действительно хотите удалить запись?') )) return false">
+                                Удалить
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+<div th:insert="footer"></div>
+
+</body>
+</html>

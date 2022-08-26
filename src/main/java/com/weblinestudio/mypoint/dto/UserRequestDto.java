@@ -1,7 +1,7 @@
 package com.weblinestudio.mypoint.dto;
 
-import com.weblinestudio.mypoint.entity.Role;
-import com.weblinestudio.mypoint.entity.User;
+import com.weblinestudio.mypoint.entity.user.Role;
+import com.weblinestudio.mypoint.entity.user.User;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

@@ -1,7 +1,7 @@
 package com.weblinestudio.mypoint.service;
 
-import com.weblinestudio.mypoint.entity.Role;
-import com.weblinestudio.mypoint.entity.User;
+import com.weblinestudio.mypoint.entity.user.Role;
+import com.weblinestudio.mypoint.entity.user.User;
 import com.weblinestudio.mypoint.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;

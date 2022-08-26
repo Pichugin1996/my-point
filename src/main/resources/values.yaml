@@ -1,15 +1,16 @@
-validator.message.errorPasswordConfirm: Пароли не совпадают!
-validator.message.errorPasswordLength: Пароль должен содержать от 8 до 20 символов!
-validator.message.errorPasswordPattern: Пароль должен состоять из восьми или более символов латинского алфавита, содержать заглавные и строчные буквы, цифры. Для усложнения рекомендуем добавить символы и знаки препинания ! @ $ % ^ & * ( ) _ - +
+validator.message.errorPasswordConfirm: -Пароли не совпадают!
+validator.message.errorPasswordLength: -Пароль должен содержать от 8 до 20 символов!
+validator.message.errorPasswordPattern: -Пароль должен состоять из восьми или более символов латинского алфавита, содержать заглавные и строчные буквы, цифры. Для усложнения рекомендуем добавить символы и знаки препинания ! @ $ % ^ & * ( ) _ - +
 
-validator.message.errorUserIsExist: Пользователь с таким логином уже занят!
-validator.message.errorUserLength: Логин должен содержать от 5 до 20 символов!
-validator.message.errorUserPattern: Логин может содержать только буквы латинского алфавита, цифры, нижнее подчеркивание и дефиз!
+validator.message.errorUserIsExist: -Пользователь с таким логином уже занят!
+validator.message.errorUserLength: -Логин должен содержать от 5 до 20 символов!
+validator.message.errorUserPattern: -Логин может содержать только буквы латинского алфавита, цифры, нижнее подчеркивание и дефиз!
 
-validator.message.errorPhone: Номер телефона введен не корректно, не используйте пробелов или иные символы!
-validator.message.errorPhoneExist: Такой номер уже использует другой пользователь!
+validator.message.errorPhone: -Номер телефона введен не корректно, не используйте пробелов или иные символы!
+validator.message.errorPhoneExist: -Такой номер уже использует другой пользователь!
 
-validator.message.errorEmailExist: Данный Email уже используется другим пользователем!
+validator.message.errorEmailExist: -Данный Email уже используется другим пользователем!
+validator.message.errorEmailLength: -Данный Email не соответствует длине!
 
 validator.pattern.password: ^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=\S+$).{8,}$
 validator.pattern.username: ^[a-zA-Z0-9_-]{5,20}$

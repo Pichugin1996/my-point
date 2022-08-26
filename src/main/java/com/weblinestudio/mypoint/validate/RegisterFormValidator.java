@@ -1,7 +1,7 @@
 package com.weblinestudio.mypoint.validate;
 
 import com.weblinestudio.mypoint.dto.UserRequestDto;
-import com.weblinestudio.mypoint.entity.User;
+import com.weblinestudio.mypoint.entity.user.User;
 import com.weblinestudio.mypoint.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -108,10 +108,16 @@ public class RegisterFormValidator {
             error = true;
             log.debug("checkEmail -- checkEmailIsExist:error user: {}", user);
         }
+        if (checkLength(user.getEmail(), 3, 70)) {
+            bindingResult.rejectValue("email", "error.email",
+                    properties.getValidatorMessageErrorEmailLength());
+            error = true;
+            log.debug("checkEmail -- checkLength:error user: {}", user);
+        }
     }
 
     private void checkFirstName() {
-
+//max size 70
     }
 
     private void checkLastName() {
@@ -127,7 +133,7 @@ public class RegisterFormValidator {
             log.debug("checkPhoneNumber -- checkPattern:error user: {}", user);
             return;
         }
-        if(userService.getUserByPhone(user.getPhone()).getPhone() != null){
+        if (userService.getUserByPhone(user.getPhone()).getPhone() != null) {
             bindingResult.rejectValue("phone", "error.phone",
                     properties.getValidatorMessageErrorPhoneExist());
             error = true;

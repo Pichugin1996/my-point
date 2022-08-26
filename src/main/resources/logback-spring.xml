@@ -52,6 +52,9 @@
     <logger name="com.weblinestudio.mypoint.service" level="DEBUG" additivity="false">
         <appender-ref ref="FILE"/>
     </logger>
+    <logger name="com.weblinestudio.mypoint.validate" level="DEBUG" additivity="false">
+        <appender-ref ref="FILE"/>
+    </logger>
     <logger name="org.springframework.web" level="DEBUG" additivity="false">
         <appender-ref ref="FILE-spring"/>
     </logger>

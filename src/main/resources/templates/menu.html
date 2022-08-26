@@ -4,7 +4,8 @@
 <div class="menu">
     <ul>
         <li><a th:href="@{/}">Главная</a></li>
-        <li><a href="#">Услуги</a></li>
+        <li><a th:href="@{/account}" sec:authorize="isAuthenticated()">Личный кабинет</a></li>
+        <li><a th:href="@{/storage}" sec:authorize="isAuthenticated()">Склад</a></li>
         <li><a href="#">Цены</a></li>
         <li><a th:href="@{/registration}" sec:authorize="isAnonymous()">Зарегистрироваться</a></li>
         <div sec:authorize="isAuthenticated()" id="hello_user">

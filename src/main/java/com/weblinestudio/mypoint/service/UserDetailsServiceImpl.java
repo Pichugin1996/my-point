@@ -1,6 +1,6 @@
 package com.weblinestudio.mypoint.service;
 
-import com.weblinestudio.mypoint.entity.User;
+import com.weblinestudio.mypoint.entity.user.User;
 import com.weblinestudio.mypoint.repository.UserRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
