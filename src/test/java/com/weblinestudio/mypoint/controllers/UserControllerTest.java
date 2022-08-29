@@ -63,7 +63,6 @@ class UserControllerTest {
                 .andExpect(content().string(containsString("©2022 Web line studio.")))
                 .andExpect(content().string(containsString("Вы уже авторизованы")))
                 .andExpect(content().string(containsString("Вы вошли как User, Выйти")));
-
     }
 
     @Test

@@ -1,8 +1,6 @@
 package com.weblinestudio.mypoint.controllers.business;
 
-import com.weblinestudio.mypoint.dto.ItemRequestDto;
 import com.weblinestudio.mypoint.entity.business.CategoriesItem;
-import com.weblinestudio.mypoint.entity.business.Item;
 import com.weblinestudio.mypoint.service.CategoriesItemService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +14,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import java.security.Principal;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Controller
 @Slf4j

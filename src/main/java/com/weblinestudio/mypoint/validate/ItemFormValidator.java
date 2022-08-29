@@ -108,4 +108,8 @@ public class ItemFormValidator {
             log.debug("checkWeight -- checkDouble:error weight");
         }
     }
+
+    public boolean isError() {
+        return error;
+    }
 }
