@@ -22,9 +22,9 @@ public class ItemRequestDto {
     private Long userId;
     private String titleName;
     private String category;
-    private BigDecimal price;
-    private Long amount;
-    private Double weight;
+    private String price;
+    private String amount;
+    private String weight;
     private String creationDate;
     private Item.Status status;
 
@@ -33,9 +33,15 @@ public class ItemRequestDto {
         this.userId = item.getUserId();
         this.titleName = item.getTitleName();
         this.category = item.getCategory();
-        this.price = item.getPrice();
-        this.amount = item.getAmount();
-        this.weight = item.getWeight();
+        if (item.getPrice() != null) {
+            this.price = item.getPrice().toString();
+        }
+        if (item.getAmount() != null) {
+            this.amount = item.getAmount().toString();
+        }
+        if (item.getWeight() != null) {
+            this.weight = item.getWeight().toString();
+        }
 //        this.creationDate = item.getCreationDate().toString();
         if (item.getCreationDate() != null) {
             this.creationDate = new SimpleDateFormat("MM-dd-yyyy HH:mm:ss").format(item.getCreationDate());
@@ -52,16 +58,16 @@ public class ItemRequestDto {
         item.setUserId(userId);
         item.setTitleName(titleName);
         item.setCategory(category);
-        item.setPrice(price);
-        item.setAmount(amount);
-        item.setWeight(weight);
+        item.setPrice(new BigDecimal(price));
+        item.setAmount(Long.valueOf(amount));
+        item.setWeight(Double.valueOf(weight));
 //        item.setCreationDate(Timestamp.valueOf(creationDate));
         System.out.println(creationDate);
         if (creationDate.length() > 5) {
             LocalDateTime parse = LocalDateTime.parse(creationDate, DateTimeFormatter.ofPattern("MM-dd-yyyy HH:mm:ss"));
             item.setCreationDate(Timestamp.valueOf(parse));
         } else {
-        item.setCreationDate(null);
+            item.setCreationDate(null);
         }
         item.setStatus(status);
         System.out.println(item);

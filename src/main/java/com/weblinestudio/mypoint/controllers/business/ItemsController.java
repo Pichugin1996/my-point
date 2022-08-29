@@ -3,6 +3,7 @@ package com.weblinestudio.mypoint.controllers.business;
 import com.weblinestudio.mypoint.dto.ItemRequestDto;
 import com.weblinestudio.mypoint.entity.business.Item;
 import com.weblinestudio.mypoint.service.ItemsService;
+import com.weblinestudio.mypoint.validate.ItemFormValidator;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,10 +23,12 @@ import java.util.stream.Collectors;
 public class ItemsController {
 
     private final ItemsService itemsService;
+    private final ItemFormValidator itemFormValidator;
 
     @Autowired
-    public ItemsController(ItemsService itemsService) {
+    public ItemsController(ItemsService itemsService, ItemFormValidator itemFormValidator) {
         this.itemsService = itemsService;
+        this.itemFormValidator = itemFormValidator;
     }
 
     @GetMapping(value = "/storage/items")
@@ -77,9 +80,12 @@ public class ItemsController {
                                  Principal principal,
                                  BindingResult bindingResult) {
         log.debug("postEditorPage -- start, principal: {}, item: {}", principal, item);
+        itemFormValidator.verify(item, bindingResult);
         itemsService.saveItem(item.transformInItem(), principal.getName());
+
         model.addAttribute("username", principal.getName());
         model.addAttribute("item", item);
+        model.addAttribute("save", "* Сохранено!");
         return "/business/editor";
     }
 
