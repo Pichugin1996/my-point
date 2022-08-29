@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Редактор</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+</head>
+<body>
+
+<div th:insert="header"></div>
+<div th:insert="menu"></div>
+<div th:insert="business/storage_menu"></div>
+
+<div class="container">
+    <form th:object="${category}" th:action="@{/storage/categories/edit} " method="post">
+        <input type="hidden" th:value="${category.getId}" name="id"/>
+        <input type="hidden" th:value="${category.getStatus}" name="status"/>
+        <input type="hidden" th:value="${category.getIdUser}" name="userId"/>
+        <div class="items_box">
+            <div>
+                <input class="green" type="submit" value="Сохранить"/>
+                <a class="green" th:href="@{/}">Назад</a>
+            </div>
+            <table class="item_table">
+                <thead>
+                <tr>
+                    <th>Наименование</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:object="${category}">
+
+                    <td><input style="width: 99%;" th:value="${category.getCategoriesName}" type="text" name="categoriesName"/></td>
+
+                </tr>
+                </tbody>
+            </table>
+            <p th:if="${save}">Сохранено!</p>
+        </div>
+    </form>
+</div>
+
+<div th:insert="footer"></div>
+
+</body>
+</html>
+
+

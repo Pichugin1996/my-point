@@ -2,6 +2,7 @@ package com.weblinestudio.mypoint.controllers.business;
 
 import com.weblinestudio.mypoint.dto.ItemRequestDto;
 import com.weblinestudio.mypoint.entity.business.Item;
+import com.weblinestudio.mypoint.service.CategoriesItemService;
 import com.weblinestudio.mypoint.service.ItemsService;
 import com.weblinestudio.mypoint.validate.ItemFormValidator;
 import lombok.extern.slf4j.Slf4j;
@@ -23,11 +24,13 @@ import java.util.stream.Collectors;
 public class ItemsController {
 
     private final ItemsService itemsService;
+    private final CategoriesItemService categoriesItemService;
     private final ItemFormValidator itemFormValidator;
 
     @Autowired
-    public ItemsController(ItemsService itemsService, ItemFormValidator itemFormValidator) {
+    public ItemsController(ItemsService itemsService, CategoriesItemService categoriesItemService, ItemFormValidator itemFormValidator) {
         this.itemsService = itemsService;
+        this.categoriesItemService = categoriesItemService;
         this.itemFormValidator = itemFormValidator;
     }
 
@@ -37,7 +40,7 @@ public class ItemsController {
 
         model.addAttribute("username", principal.getName());
         List<Item> tasksByUsername = itemsService.getTasksByUsername(principal.getName());
-        model.addAttribute("items", itemsService.getTasksByUsername(principal.getName())
+        model.addAttribute("items", tasksByUsername
                 //List ItemRequestDto
                 .stream().map(item -> new ItemRequestDto().transformInDto(item)).collect(Collectors.toList()));
 
@@ -50,6 +53,7 @@ public class ItemsController {
         if (id != null) {
             model.addAttribute("item", new ItemRequestDto().transformInDto(itemsService.getItemById(id, principal.getName())));
         }
+        model.addAttribute("categories", categoriesItemService.getCategoriesByUsername(principal.getName()));
         model.addAttribute("username", principal.getName());
 
         return "/business/editor";
@@ -70,6 +74,7 @@ public class ItemsController {
         log.debug("getEditorPage -- start, principal: {}", principal);
         model.addAttribute("username", principal.getName());
         model.addAttribute("item", new ItemRequestDto());
+        model.addAttribute("categories", categoriesItemService.getCategoriesByUsername(principal.getName()));
 
         return "/business/editor";
     }
@@ -85,6 +90,7 @@ public class ItemsController {
 
         model.addAttribute("username", principal.getName());
         model.addAttribute("item", item);
+        model.addAttribute("categories", categoriesItemService.getCategoriesByUsername(principal.getName()));
         model.addAttribute("save", "* Сохранено!");
         return "/business/editor";
     }

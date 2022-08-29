@@ -36,7 +36,17 @@
                 <tr th:object="${item}">
 
                     <td><input th:value="${item.getTitleName}" type="text" name="titleName"/></td>
-                    <td><input th:value="${item.getCategory}" type="text" name="category"/></td>
+<!--                    <td><input th:value="${item.getCategory}" type="text" name="category"/></td>-->
+
+                    <td>
+                        <select th:field="*{category}">
+                            <option value=""> -- </option>
+                            <option th:each="categ : ${categories}"
+                                    th:value="${categ.getCategoriesName}"
+                                    th:utext="${categ.getCategoriesName}"/>
+                        </select>
+                    </td>
+
                     <td><input th:value="${item.getPrice}" type="text" name="price"/></td>
                     <td><input th:value="${item.getAmount}" type="text" name="amount"/></td>
                     <td><input th:value="${item.getWeight}" type="text" name="weight"/></td>
